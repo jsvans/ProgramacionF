@@ -1,0 +1,19 @@
+Pwd Presenta el directorio en uso. Ej. pwd
+Ls Enlista los contenidos de un directorio. Ej. Ls -l
+Cd Cambia de directorio. Ej. Cd AAA
+File Obtiene información sobre qué tipo de archivo o drectorio es. Ej. file AAA/file1.txt
+ls –a Enlista los contenidos de un directorio, incluyendo archives ocultos. ls –a AAA
+man <commando> Abre el manual para un commando específico. Ej.  man cd
+man -k <termino a buscar> Busca una letra o palabra en todos los manuals existentes. Ej. man ls
+Mkdir Crea un directorio. Ej. mkdir BBB
+Rmdir Elimina un directorio. Ej rmdir BBB/bar
+Touch Crea un archivo en blanco. Ej. touch CCC
+Cp Copia un archivo o directorio. Ej. cp CCC 
+Mv Mueve un archivo o directorio. Ej. mv CCC/BBB
+Rm Elimina un archivo. Ej. rm CCC
+Vi Edita un archivo. Ej. vi BBB
+Cat Ver un archivo. Ej. cat BBB
+Less Sirve para inspeccionar archivos grandes. Less CCC
+Chmod Cambia los permisos de un archive o directorio.
+ls –ld Inspecciona los permisos de un directorio específico.
+
