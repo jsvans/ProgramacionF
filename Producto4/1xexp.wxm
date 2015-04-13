@@ -1,0 +1,23 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with http://maxima-online.org ] */
+
+/* [wxMaxima: comment start ]
+This solution online http://maxima-online.org/?inc=r-445163449
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):= (1+x)*exp(x);
+T3(x):=taylor(f(x), x, 0, 3);
+T6(x):=taylor(f(x), x, 0, 6);
+T9(x):=taylor(f(x), x, 0, 9);
+T12(x):=taylor(f(x), x, 0, 12);
+fortran(T3(x));
+fortran(T6(x));
+fortran(T9(x));
+fortran(T12(x));
+tex(T3(x));
+tex(T6(x));
+tex(T9(x));
+tex(T12(x));
+plot2d ([f(x),T3(x),T6(x),T9(x),T12(x)],[x, -5, 5],[y, -10, 10],[legend, "(1+x)*exp(x)", "T3", "T6", "T9", "T12"],[style,[lines,2]]);
+/* [wxMaxima: input   end   ] */
