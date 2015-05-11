@@ -1,0 +1,44 @@
+1:  !************************************************  
+2:  !This program plots projectile motion of an object.  
+3:  !The program requires user input for initial velocity   
+4:  !and angle of the object.The algorithm uses a time   
+5:  !step of 0.01 second i.e. it calculates object's  
+6:  !location in the x and y plane every 0.01 second.  
+7:  !**********By: Waleed Ishaque, 2013**************  
+8:  program projectile_plot  
+9:       implicit none  
+10:       !Defining constants:  
+11:       real, parameter :: pi = 4.0*atan(1.0) 
+12:       real :: u, a, t, a_grados  
+13:       real, parameter :: g = 9.81  
+14:       real:: x(150),y(150)  
+          integer :: i 
+
+15:       !where g is gravity, pi is "pi"   
+16:       !u is object's initial velocity   
+17:       !a is object's initial angle   
+18:       !t is time during the simulation   
+19:       !x and y are arrays with 150 rows   
+20:       !Seek user input   
+21:       write(*,*) 'Enter angle of projectile (Real)'   
+22:       read *, a_grados   
+23:       write(*,*) 'Enter velocity of projectile (Real)'   
+24:       read *, u   
+25:       !Convert angle to radians   
+26:       a = a_grados*pi/180.0   
+27:       !open .dat file and start writing on it using the algorithm   
+28:       open(1, file='proj.dat')   
+29:         
+30:       do i=1,100   
+31:            !displacement of object in x and y direction   
+32:            t = (float(i)*0.01)   
+33:            x(i) = u*cos(a)*t   
+34:            y(i) = u*sin(a)*t - 0.5*g*t*t   
+35:            !write output in file "proj.dat" for plotting   
+36:            write(1,*) x(i), y(i)   
+37:            !kill the loop when the object hits the ground   
+38:            if (y(i)<0) exit   
+39:       end do   
+40:       close(1)   
+41:       !close file   
+42:  end program projectile_plot 
